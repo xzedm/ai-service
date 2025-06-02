@@ -2,35 +2,31 @@
   "name": "contact-form-backend",
   "version": "1.0.0",
   "description": "Backend server for contact form with Supabase",
-  "main": "dist/server.js",
+  "main": "api/index.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
+    "vercel-build": "tsc",
     "clean": "rm -rf dist"
   },
-  "keywords": [
-    "express",
-    "typescript",
-    "supabase",
-    "contact-form"
-  ],
+  "keywords": ["express", "typescript", "supabase", "contact-form", "vercel"],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "@supabase/supabase-js": "^2.49.9",
+    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^4.21.2",
-    "express-rate-limit": "^7.5.0",
-    "helmet": "^7.2.0"
+    "dotenv": "^16.3.1",
+    "@supabase/supabase-js": "^2.38.4",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.18",
-    "@types/express": "^4.17.22",
-    "@types/node": "^20.17.57",
-    "nodemon": "^3.1.10",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "nodemon": "^3.0.2"
   }
 }
