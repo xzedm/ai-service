@@ -16,7 +16,7 @@ app.use(helmet());
 // Rate limiting (adjusted for serverless)
 app.use(generalLimiter);
 
-// CORS configuration - Updated to include your frontend domain
+// CORS configuration - Allow all origins for testing
 const corsOptions = {
   origin: '*',  // Allow all origins temporarily
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -25,6 +25,20 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// Manual CORS headers as backup
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  
+  // Handle preflight OPTIONS request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  next();
+});
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
