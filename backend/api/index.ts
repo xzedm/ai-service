@@ -18,13 +18,10 @@ app.use(generalLimiter);
 
 // CORS configuration - Updated to include your frontend domain
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || [
-    'http://localhost:5173', 
-    'https://easybot-ai.vercel.app',  // Add your frontend domain here
-  ],
+  origin: '*',  // Allow all origins temporarily
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: false  // Must be false when origin is '*'
 };
 
 app.use(cors(corsOptions));

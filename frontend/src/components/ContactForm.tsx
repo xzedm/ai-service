@@ -40,7 +40,7 @@ const handleSubmit = async () => {
   
   try {
     // Update this URL to point to your Express server
-    const response = await fetch('https://backend-jpo0asomi-xzedms-projects.vercel.app/api/contacts', {
+    const response = await fetch('https://backend-81z21oww7-xzedms-projects.vercel.app/api/contacts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
