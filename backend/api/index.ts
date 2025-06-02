@@ -16,9 +16,12 @@ app.use(helmet());
 // Rate limiting (adjusted for serverless)
 app.use(generalLimiter);
 
-// CORS configuration
+// CORS configuration - Updated to include your frontend domain
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || ['http://localhost:5173', 'https://your-frontend-domain.vercel.app'],
+  origin: process.env.CORS_ORIGIN || [
+    'http://localhost:5173', 
+    'https://easybot-ai.vercel.app',  // Add your frontend domain here
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
