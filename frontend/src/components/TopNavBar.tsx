@@ -36,8 +36,9 @@ export const TopNavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-5">
           {/* Logo */}
-          <div className="font-bold text-lg md:text-xl text-[#042256]">
-            EasyBot
+          <div className="font-bold text-lg md:text-xl text-[#042256] flex items-center">
+          <img src='robot.png' className='w-8 h-8'/>
+            EasyBot<span className='text-[#a3c1f6]'>AI</span>
           </div>
 
           {/* Desktop Navigation */}
